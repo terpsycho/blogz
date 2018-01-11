@@ -1,0 +1,69 @@
+
+<!doctype html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <style>
+            
+            .error {
+                color: red;
+            }
+            div {
+                text-align: center;
+                margin: 20px 0 0 ;
+                padding: 10px 0;
+
+            }
+            
+            a:link {
+                color: dodgerblue;
+            }
+
+
+            a:visited {
+                color: tomato;
+            }
+
+
+            a:hover {
+                color: hotpink;
+            }
+
+            a:active {
+                color: slategray;
+            }
+            
+        </style>
+    </head>
+<body>
+
+    <div>
+        <a href='/blog'>All Dem Blogs</a> 
+
+        <a href='/'>All Dem Users</a>
+
+        <a href='/newpost'>Add New Post</a>
+
+        <br>
+
+        <a href='/login'>Log In</a>
+
+        <a href='/logout'>Log Out</a>
+
+        
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    <ul>
+    {% for category,message in messages %}
+        <li class="{{category}}">{{message}}</li>
+    {% endfor %}
+    </ul>
+    {% endwith %}
+
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

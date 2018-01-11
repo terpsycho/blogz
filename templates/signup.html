@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Signup for Dem Blogz!</h1>
+<form action="/register" method="post">
+    <table>
+        <tr>
+            <td><label for="username">Dat Username</label></td>
+            <td>
+                <input name="username" type="username" value="{{ username }}">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="password">Dat Password</label></td>
+            <td>
+                <input name="password" type="password">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="verify">Verify Dat Password</label></td>
+            <td>
+                <input name="verify" type="password">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Join The Rebellion!">
+</form>
+{% endblock %}
