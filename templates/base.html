@@ -9,6 +9,7 @@
                 color: red;
             }
             div {
+                color: red;
                 text-align: center;
                 margin: 20px 0 0 ;
                 padding: 10px 0;
@@ -54,11 +55,9 @@
     </div>
 
     {% with messages = get_flashed_messages(with_categories=True) %}
-    <ul>
     {% for category,message in messages %}
-        <li class="{{category}}">{{message}}</li>
+        <div class="{{category}}">{{message}}</div>
     {% endfor %}
-    </ul>
     {% endwith %}
 
 
